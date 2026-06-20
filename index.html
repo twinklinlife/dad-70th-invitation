@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>아버지 칠순 잔치에 초대합니다</title>
+
+<!-- 카카오톡 / 오픈그래프 미리보기 설정 -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="아버지 칠순 잔치에 초대합니다">
+<meta property="og:description" content="2026년 6월 28일 일요일 오후 6시 · 코트야드 메리어트 서울 판교 모모카페">
+<meta property="og:image" content="https://twinklinlife.github.io/dad-70th-invitation/preview.png">
+<meta property="og:image:width" content="800">
+<meta property="og:image:height" content="400">
+<meta property="og:url" content="https://twinklinlife.github.io/dad-70th-invitation/">
+<meta property="og:site_name" content="아버지 칠순 잔치 초대장">
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Gowun+Batang:wght@400;700&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Gowun Batang', serif;
+    background: #f4f1ec;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 14px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 420px;
+    background: #ffffff;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.06);
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    position: relative;
+    padding: 64px 24px 52px;
+    text-align: center;
+    background: linear-gradient(180deg, #fbf8f3 0%, #f4ede2 100%);
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 28px; left: 28px; right: 28px; bottom: 28px;
+    border: 1px solid #cdbb9c;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .hero-flowers {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .hero-flowers svg {
+    position: absolute;
+  }
+
+  .fl-tl { top: -14px; left: -10px; width: 130px; }
+  .fl-tr { top: -14px; right: -10px; width: 130px; transform: scaleX(-1); }
+  .fl-br { bottom: -10px; right: -16px; width: 100px; transform: rotate(180deg); }
+
+  .hero-eng {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: #a98a5c;
+    margin-bottom: 18px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-eng span { font-weight: 600; }
+
+  .hero-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #2e2a24;
+    line-height: 1.55;
+    margin-bottom: 22px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-title .em {
+    color: #a98a5c;
+  }
+
+  .hero-divider {
+    width: 30px;
+    height: 1px;
+    background: #cdbb9c;
+    margin: 0 auto 22px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-sub {
+    font-size: 13px;
+    color: #8c8276;
+    letter-spacing: 1px;
+    line-height: 1.9;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* ===== SECTION GENERIC ===== */
+  .section {
+    padding: 40px 28px;
+    text-align: center;
+    border-top: 1px solid #ece6da;
+  }
+
+  .section-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: #a98a5c;
+    margin-bottom: 10px;
+  }
+
+  .section-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #2e2a24;
+    margin-bottom: 28px;
+  }
+
+  /* ===== GREETING ===== */
+  .greeting-text {
+    font-size: 14.5px;
+    line-height: 2.05;
+    color: #4c473e;
+  }
+
+  .greeting-text .strong {
+    color: #a98a5c;
+    font-weight: 700;
+  }
+
+  .signature {
+    margin-top: 26px;
+    font-size: 13px;
+    color: #8c8276;
+    letter-spacing: 0.5px;
+  }
+
+  /* ===== INFO (date/place) ===== */
+  .info-block {
+    text-align: center;
+    padding: 22px 0;
+  }
+  .info-block + .info-block {
+    border-top: 1px dashed #ece6da;
+  }
+
+  .info-key {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #a98a5c;
+    margin-bottom: 8px;
+  }
+
+  .info-main {
+    font-size: 16px;
+    font-weight: 700;
+    color: #2e2a24;
+    margin-bottom: 4px;
+    line-height: 1.5;
+  }
+
+  .time-pill {
+    display: inline-block;
+    margin-top: 8px;
+    background: #2e2a24;
+    color: #fdfaf5;
+    font-size: 13.5px;
+    font-weight: 700;
+    padding: 6px 18px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+  }
+
+  .place-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: #2e2a24;
+  }
+
+  .place-address {
+    font-size: 12.5px;
+    color: #8c8276;
+    margin-top: 6px;
+    line-height: 1.7;
+  }
+
+  /* ===== MAP CARD ===== */
+  .map-card {
+    margin-top: 18px;
+    border: 1px solid #ece6da;
+    border-radius: 2px;
+    overflow: hidden;
+    text-align: left;
+  }
+
+  .map-preview {
+    position: relative;
+    height: 130px;
+    background: linear-gradient(160deg, #f1efe9 0%, #e8e4d9 100%);
+    overflow: hidden;
+  }
+
+  .map-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(160, 150, 130, 0.16) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(160, 150, 130, 0.16) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .map-road {
+    position: absolute;
+    background: rgba(255,255,255,0.8);
+  }
+  .map-road.h { top: 42%; left: 0; right: 0; height: 6px; }
+  .map-road.v1 { left: 30%; top: 0; bottom: 0; width: 6px; }
+  .map-road.v2 { left: 72%; top: 0; bottom: 0; width: 4px; }
+
+  .map-pin-wrap {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -65%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .map-pin {
+    width: 28px;
+    height: 28px;
+    background: #a98a5c;
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.18);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .map-pin::after {
+    content: '';
+    width: 10px; height: 10px;
+    background: #fff;
+    border-radius: 50%;
+    transform: rotate(45deg);
+  }
+
+  .map-pin-tag {
+    margin-top: 6px;
+    font-size: 10.5px;
+    color: #4c473e;
+    background: rgba(255,255,255,0.9);
+    padding: 2px 9px;
+    border-radius: 10px;
+    letter-spacing: 0.3px;
+  }
+
+  .map-info-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 14px 16px;
+    background: #fdfaf5;
+  }
+
+  .map-info-text {
+    font-size: 12px;
+    color: #6b665a;
+    line-height: 1.6;
+  }
+
+  .map-link-btn {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: #03c75a;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 8px 14px;
+    border-radius: 18px;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  /* ===== NOTICE LIST ===== */
+  .notice-list {
+    text-align: left;
+    font-size: 12.5px;
+    color: #6b665a;
+    line-height: 1.9;
+    padding-left: 4px;
+  }
+  .notice-list li {
+    list-style: none;
+    padding-left: 14px;
+    position: relative;
+    margin-bottom: 6px;
+  }
+  .notice-list li::before {
+    content: '·';
+    position: absolute;
+    left: 0;
+    color: #a98a5c;
+  }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    padding: 36px 28px 44px;
+    text-align: center;
+    background: #fbf8f3;
+  }
+
+  .footer-text {
+    font-size: 13px;
+    color: #8c8276;
+    line-height: 2;
+  }
+
+  .footer-eng {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #cdbb9c;
+    margin-top: 18px;
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-flowers">
+      <svg class="fl-tl" viewBox="0 0 130 130" xmlns="http://www.w3.org/2000/svg">
+        <g fill="none" stroke="#b99b6c" stroke-width="1.2" opacity="0.55">
+          <path d="M5 8 C30 5, 55 15, 60 45 C63 65, 50 85, 30 90"/>
+          <path d="M18 22 C28 20, 36 26, 35 36"/>
+          <path d="M30 50 C42 46, 52 52, 50 64"/>
+        </g>
+        <g opacity="0.9">
+          <g transform="translate(14,14)">
+            <ellipse cx="0" cy="-9" rx="6" ry="10" fill="#d8a8a0"/>
+            <ellipse cx="8" cy="-3" rx="6" ry="10" fill="#e0bcb4" transform="rotate(72 8 -3)"/>
+            <ellipse cx="5" cy="7" rx="6" ry="10" fill="#d8a8a0" transform="rotate(144 5 7)"/>
+            <ellipse cx="-5" cy="7" rx="6" ry="10" fill="#e0bcb4" transform="rotate(216 -5 7)"/>
+            <ellipse cx="-8" cy="-3" rx="6" ry="10" fill="#d8a8a0" transform="rotate(288 -8 -3)"/>
+            <circle cx="0" cy="0" r="4.5" fill="#c98f6e"/>
+          </g>
+          <g transform="translate(45,40) scale(0.68)">
+            <ellipse cx="0" cy="-9" rx="6" ry="10" fill="#cdbb9c"/>
+            <ellipse cx="8" cy="-3" rx="6" ry="10" fill="#dccba f" transform="rotate(72 8 -3)"/>
+            <ellipse cx="5" cy="7" rx="6" ry="10" fill="#cdbb9c" transform="rotate(144 5 7)"/>
+            <ellipse cx="-5" cy="7" rx="6" ry="10" fill="#dccbaf" transform="rotate(216 -5 7)"/>
+            <ellipse cx="-8" cy="-3" rx="6" ry="10" fill="#cdbb9c" transform="rotate(288 -8 -3)"/>
+            <circle cx="0" cy="0" r="4.5" fill="#a98a5c"/>
+          </g>
+          <g transform="translate(22,62) scale(0.42)">
+            <ellipse cx="0" cy="-9" rx="6" ry="10" fill="#e0bcb4"/>
+            <ellipse cx="8" cy="-3" rx="6" ry="10" fill="#d8a8a0" transform="rotate(72 8 -3)"/>
+            <ellipse cx="5" cy="7" rx="6" ry="10" fill="#e0bcb4" transform="rotate(144 5 7)"/>
+            <ellipse cx="-5" cy="7" rx="6" ry="10" fill="#d8a8a0" transform="rotate(216 -5 7)"/>
+            <ellipse cx="-8" cy="-3" rx="6" ry="10" fill="#e0bcb4" transform="rotate(288 -8 -3)"/>
+            <circle cx="0" cy="0" r="4.5" fill="#c98f6e"/>
+          </g>
+          <ellipse cx="40" cy="18" rx="4" ry="8" fill="#9cab7e" opacity="0.7" transform="rotate(-30 40 18)"/>
+          <ellipse cx="58" cy="55" rx="4" ry="8" fill="#9cab7e" opacity="0.7" transform="rotate(40 58 55)"/>
+          <ellipse cx="12" cy="48" rx="3.5" ry="7" fill="#9cab7e" opacity="0.6" transform="rotate(-10 12 48)"/>
+        </g>
+      </svg>
+
+      <svg class="fl-tr" viewBox="0 0 130 130" xmlns="http://www.w3.org/2000/svg">
+        <g fill="none" stroke="#b99b6c" stroke-width="1.2" opacity="0.55">
+          <path d="M5 8 C30 5, 55 15, 60 45 C63 65, 50 85, 30 90"/>
+          <path d="M18 22 C28 20, 36 26, 35 36"/>
+        </g>
+        <g opacity="0.9">
+          <g transform="translate(14,14)">
+            <ellipse cx="0" cy="-9" rx="6" ry="10" fill="#cdbb9c"/>
+            <ellipse cx="8" cy="-3" rx="6" ry="10" fill="#dccbaf" transform="rotate(72 8 -3)"/>
+            <ellipse cx="5" cy="7" rx="6" ry="10" fill="#cdbb9c" transform="rotate(144 5 7)"/>
+            <ellipse cx="-5" cy="7" rx="6" ry="10" fill="#dccbaf" transform="rotate(216 -5 7)"/>
+            <ellipse cx="-8" cy="-3" rx="6" ry="10" fill="#cdbb9c" transform="rotate(288 -8 -3)"/>
+            <circle cx="0" cy="0" r="4.5" fill="#a98a5c"/>
+          </g>
+          <g transform="translate(45,40) scale(0.6)">
+            <ellipse cx="0" cy="-9" rx="6" ry="10" fill="#d8a8a0"/>
+            <ellipse cx="8" cy="-3" rx="6" ry="10" fill="#e0bcb4" transform="rotate(72 8 -3)"/>
+            <ellipse cx="5" cy="7" rx="6" ry="10" fill="#d8a8a0" transform="rotate(144 5 7)"/>
+            <ellipse cx="-5" cy="7" rx="6" ry="10" fill="#e0bcb4" transform="rotate(216 -5 7)"/>
+            <ellipse cx="-8" cy="-3" rx="6" ry="10" fill="#d8a8a0" transform="rotate(288 -8 -3)"/>
+            <circle cx="0" cy="0" r="4.5" fill="#c98f6e"/>
+          </g>
+          <ellipse cx="40" cy="18" rx="4" ry="8" fill="#9cab7e" opacity="0.7" transform="rotate(-30 40 18)"/>
+          <ellipse cx="12" cy="48" rx="3.5" ry="7" fill="#9cab7e" opacity="0.6" transform="rotate(-10 12 48)"/>
+        </g>
+      </svg>
+
+      <svg class="fl-br" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <g fill="none" stroke="#b99b6c" stroke-width="1.1" opacity="0.5">
+          <path d="M5 6 C22 4, 40 12, 44 32"/>
+        </g>
+        <g opacity="0.85">
+          <g transform="translate(12,12) scale(0.8)">
+            <ellipse cx="0" cy="-9" rx="6" ry="10" fill="#e0bcb4"/>
+            <ellipse cx="8" cy="-3" rx="6" ry="10" fill="#d8a8a0" transform="rotate(72 8 -3)"/>
+            <ellipse cx="5" cy="7" rx="6" ry="10" fill="#e0bcb4" transform="rotate(144 5 7)"/>
+            <ellipse cx="-5" cy="7" rx="6" ry="10" fill="#d8a8a0" transform="rotate(216 -5 7)"/>
+            <ellipse cx="-8" cy="-3" rx="6" ry="10" fill="#e0bcb4" transform="rotate(288 -8 -3)"/>
+            <circle cx="0" cy="0" r="4.5" fill="#c98f6e"/>
+          </g>
+          <ellipse cx="32" cy="20" rx="3.5" ry="7" fill="#9cab7e" opacity="0.7" transform="rotate(-30 32 20)"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="hero-eng">70<span>th</span> &nbsp;B I R T H D A Y &nbsp;P A R T Y</div>
+    <div class="hero-title">아버지<br><span class="em">칠순 잔치</span>에<br>초대합니다</div>
+    <div class="hero-divider"></div>
+    <div class="hero-sub">한평생 가족을 위해 살아오신<br>아버지의 일흔 번째 생신을 축하하는 자리</div>
+  </div>
+
+  <!-- 모시는 글 -->
+  <div class="section">
+    <div class="section-label">I N V I T A T I O N</div>
+    <div class="section-title">모시는 글</div>
+    <p class="greeting-text">
+      아버지의 칠순을 함께 축하해 주세요<br>
+      한평생 가족을 가장 먼저 생각하시고<br>
+      언제나 한결같은 사랑으로<br>
+      우리 곁을 지켜주신 아버지께서<br>
+      <span class="strong">일흔 번째 생신</span>을 맞이하셨습니다.<br><br>
+      아버지께 감사와 사랑을 전하는 자리에<br>
+      소중한 가족분들을 모시고자 합니다.<br>
+      함께하시어 아버지의 건강과 행복을<br>
+      축복해 주시면 감사하겠습니다.
+    </p>
+    <div class="signature">가족 일동 올림</div>
+  </div>
+
+  <!-- 일시 / 장소 -->
+  <div class="section">
+    <div class="section-label">D A T E &nbsp;&amp;&nbsp; V E N U E</div>
+    <div class="section-title">일시 및 장소</div>
+
+    <div class="info-block">
+      <div class="info-key">D A T E</div>
+      <div class="info-main">2026년 6월 28일 일요일</div>
+      <div class="time-pill">오후 6시</div>
+    </div>
+
+    <div class="info-block">
+      <div class="info-key">V E N U E</div>
+      <div class="place-name">코트야드 메리어트 서울 판교 모모카페</div>
+      <div class="place-address">
+        경기 성남시 분당구 판교역로192번길 12<br>
+        판교미래에셋센터 8층
+      </div>
+
+      <div class="map-card">
+        <div class="map-preview">
+          <div class="map-grid"></div>
+          <div class="map-road h"></div>
+          <div class="map-road v1"></div>
+          <div class="map-road v2"></div>
+          <div class="map-pin-wrap">
+            <div class="map-pin"></div>
+            <div class="map-pin-tag">모모카페 · 판교</div>
+          </div>
+        </div>
+        <div class="map-info-row">
+          <div class="map-info-text">네이버 지도에서<br>위치를 확인해 보세요</div>
+          <a class="map-link-btn" href="https://naver.me/GNWMNA0U" target="_blank" rel="noopener noreferrer">지도 보기 ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 안내사항 -->
+  <div class="section">
+    <div class="section-label">N O T I C E</div>
+    <div class="section-title">안내 사항</div>
+    <ul class="notice-list">
+      <li>호텔 주차장을 무료로 이용하실 수 있습니다.</li>
+      <li>신분당선 판교역에서 도보로 이동 가능합니다.</li>
+      <li>참석 인원 확인을 위해 미리 연락 주시면 감사하겠습니다.</li>
+    </ul>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <p class="footer-text">
+      귀한 발걸음으로<br>
+      자리를 빛내주시면 감사하겠습니다.
+    </p>
+    <div class="footer-eng">W I T H &nbsp; L O V E &nbsp; A N D &nbsp; G R A T I T U D E</div>
+  </div>
+
+</div>
+
+</body>
+</html>
